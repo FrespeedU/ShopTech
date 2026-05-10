@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="fondo_oscuro">#0D0D1A</color> <color name="gris_paneles">#1A1A2E</color> <color name="neon_azul">#00E5FF</color> <color name="neon_fucsia">#FF007F</color> <color name="neon_verde">#39FF14</color> <color name="neon_amarillo">#FFFF00</color> <color name="texto_secundario">#A0A0B0</color> </resources>

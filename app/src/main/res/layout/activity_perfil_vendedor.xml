@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_oscuro"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTituloPerfilVend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt; Mi Perfil Comercial"
+        android:textColor="@color/neon_azul"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivLogoTienda"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        app:tint="@color/neon_fucsia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPerfilVend" />
+
+    <EditText
+        android:id="@+id/etNombreTienda"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/neon_azul"
+        android:hint="Nombre de la tienda"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoTienda" />
+
+    <EditText
+        android:id="@+id/etDescTienda"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/neon_azul"
+        android:hint="Descripción de la tienda"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreTienda" />
+
+    <EditText
+        android:id="@+id/etCategoriasTienda"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/neon_azul"
+        android:hint="Categorías principales"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/etDescTienda" />
+
+    <Button
+        android:id="@+id/btnGuardarPerfilTienda"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/neon_verde"
+        android:text="Guardar Perfil"
+        android:textColor="@color/fondo_oscuro"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

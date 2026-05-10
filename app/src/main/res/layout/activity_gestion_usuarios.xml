@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_oscuro"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTituloUsuarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt; Usuarios"
+        android:textColor="@color/neon_azul"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etBuscarUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/ic_launcher_background"
+        android:backgroundTint="@color/gris_paneles"
+        android:hint="Buscar usuario..."
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloUsuarios" />
+
+    <TextView
+        android:id="@+id/tvFiltros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Filtrar: Todos | Vendedor | Comprador"
+        android:textColor="@color/texto_secundario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBuscarUsuario" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvFiltros">
+
+        <Button
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:text="Laura Pérez - Vendedor"
+            android:textColor="@color/white"
+            app:strokeColor="@color/neon_verde" />
+
+        <Button
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:text="Andrés Soto - Comprador"
+            android:textColor="@color/white"
+            app:strokeColor="@color/neon_azul" />
+
+        <Button
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Camila Rico - Admin"
+            android:textColor="@color/white"
+            app:strokeColor="@color/neon_fucsia" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnNuevoUsuario"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:text="+ Nuevo Usuario"
+        android:textColor="@color/neon_amarillo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:strokeColor="@color/neon_amarillo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

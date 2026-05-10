@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_oscuro"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTituloCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Checkout"
+        android:textColor="@color/neon_azul"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDireccionTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Dirección de entrega:"
+        android:textColor="@color/texto_secundario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCheckout" />
+
+    <ImageView
+        android:id="@+id/ivMapaFalso"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/gris_paneles"
+        android:src="@android:drawable/ic_dialog_map"
+        app:tint="@color/neon_verde"
+        app:layout_constraintTop_toBottomOf="@+id/tvDireccionTitulo" />
+
+    <TextView
+        android:id="@+id/tvDireccionTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Calle 15 #2-45, Facatativá"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMapaFalso" />
+
+    <TextView
+        android:id="@+id/tvMetodoPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Método de pago:"
+        android:textColor="@color/texto_secundario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDireccionTexto" />
+
+    <EditText
+        android:id="@+id/etMedioPago"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/neon_azul"
+        android:hint="ePayco - Tarjeta / PSE"
+        android:enabled="false"
+        android:textColor="@color/neon_amarillo"
+        app:layout_constraintTop_toBottomOf="@+id/tvMetodoPago" />
+
+    <Button
+        android:id="@+id/btnPagarFinal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/neon_fucsia"
+        android:text="Pagar $1.562.000"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

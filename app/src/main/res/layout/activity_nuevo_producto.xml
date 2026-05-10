@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_oscuro"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTituloNuevoProd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt; Nuevo Producto"
+        android:textColor="@color/neon_azul"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llFotos"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloNuevoProd">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@color/gris_paneles"
+            android:src="@android:drawable/ic_menu_camera"
+            app:tint="@color/neon_fucsia" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="@color/gris_paneles"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:tint="@color/neon_fucsia" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSubirFoto"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tomar Foto / Galería"
+        android:textColor="@color/neon_fucsia"
+        app:strokeColor="@color/neon_fucsia"
+        app:layout_constraintTop_toBottomOf="@+id/llFotos" />
+
+    <EditText
+        android:id="@+id/etNombreProd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/neon_fucsia"
+        android:hint="Nombre del producto"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubirFoto" />
+
+    <EditText
+        android:id="@+id/etDescProd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/neon_fucsia"
+        android:hint="Descripción detallada"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreProd" />
+
+    <EditText
+        android:id="@+id/etPrecioProd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/neon_fucsia"
+        android:hint="Precio (COP)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/etDescProd" />
+
+    <EditText
+        android:id="@+id/etStockProd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/neon_fucsia"
+        android:hint="Cantidad en stock"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintTop_toBottomOf="@+id/etPrecioProd" />
+
+    <Button
+        android:id="@+id/btnGuardarProducto"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/neon_azul"
+        android:text="Guardar Producto"
+        android:textColor="@color/fondo_oscuro"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
