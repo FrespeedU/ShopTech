@@ -1,117 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo_oscuro"
-    android:padding="24dp">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvTituloNuevoProd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="&lt; Nuevo Producto"
-        android:textColor="@color/neon_azul"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/llFotos"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloNuevoProd">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_estandar"
+        tools:context=".NuevoProductoActivity">
+
+        <TextView
+            android:id="@+id/tvTituloNuevoProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:text="@string/titulo_nuevo_producto"
+            android:textColor="@color/neon_azul"
+            android:textSize="@dimen/text_size_titulo"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
+            android:id="@+id/ivPreviewProducto"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/margin_medio"
             android:background="@color/gris_paneles"
+            android:scaleType="centerCrop"
             android:src="@android:drawable/ic_menu_camera"
-            app:tint="@color/neon_fucsia" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloNuevoProducto"
+            tools:ignore="ContentDescription" />
 
-        <ImageView
+        <Button
+            android:id="@+id/btnSeleccionarImagen"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_muy_corto"
+            android:text="@string/btn_seleccionar_imagen"
+            android:textColor="@color/neon_verde"
+            app:strokeColor="@color/neon_verde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPreviewProducto" />
+
+        <EditText
+            android:id="@+id/etNombreProducto"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:background="@color/gris_paneles"
-            android:src="@android:drawable/ic_menu_gallery"
-            app:tint="@color/neon_fucsia" />
-    </LinearLayout>
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_medio"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_nombre_producto"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSeleccionarImagen" />
 
-    <Button
-        android:id="@+id/btnSubirFoto"
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Tomar Foto / Galería"
-        android:textColor="@color/neon_fucsia"
-        app:strokeColor="@color/neon_fucsia"
-        app:layout_constraintTop_toBottomOf="@+id/llFotos" />
+        <EditText
+            android:id="@+id/etDescripcionProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_descripcion_producto"
+            android:inputType="textLongMessage"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNombreProducto" />
 
-    <EditText
-        android:id="@+id/etNombreProd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/neon_fucsia"
-        android:hint="Nombre del producto"
-        android:textColor="@color/white"
-        android:textColorHint="@color/texto_secundario"
-        app:layout_constraintTop_toBottomOf="@+id/btnSubirFoto" />
+        <EditText
+            android:id="@+id/etMarcaProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_marca_producto"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDescripcionProducto" />
 
-    <EditText
-        android:id="@+id/etDescProd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/neon_fucsia"
-        android:hint="Descripción detallada"
-        android:textColor="@color/white"
-        android:textColorHint="@color/texto_secundario"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreProd" />
+        <EditText
+            android:id="@+id/etModeloProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_modelo_producto"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etMarcaProducto" />
 
-    <EditText
-        android:id="@+id/etPrecioProd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/neon_fucsia"
-        android:hint="Precio (COP)"
-        android:inputType="numberDecimal"
-        android:textColor="@color/white"
-        android:textColorHint="@color/texto_secundario"
-        app:layout_constraintTop_toBottomOf="@+id/etDescProd" />
+        <EditText
+            android:id="@+id/etSkuProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_sku_producto"
+            android:inputType="textCapCharacters"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etModeloProducto" />
 
-    <EditText
-        android:id="@+id/etStockProd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/neon_fucsia"
-        android:hint="Cantidad en stock"
-        android:inputType="number"
-        android:textColor="@color/white"
-        android:textColorHint="@color/texto_secundario"
-        app:layout_constraintTop_toBottomOf="@+id/etPrecioProd" />
+        <EditText
+            android:id="@+id/etCategoriaProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_categoria_producto"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSkuProducto" />
 
-    <Button
-        android:id="@+id/btnGuardarProducto"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/neon_azul"
-        android:text="Guardar Producto"
-        android:textColor="@color/fondo_oscuro"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <EditText
+            android:id="@+id/etPrecioProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_precio_producto"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etCategoriaProducto" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/etStockProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_marginTop="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="@string/hint_stock_producto"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPrecioProducto" />
+
+        <Button
+            android:id="@+id/btnGuardarProducto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_boton"
+            android:layout_marginTop="@dimen/margin_largo"
+            android:layout_marginBottom="@dimen/margin_corto"
+            android:backgroundTint="@color/neon_fucsia"
+            android:text="@string/btn_guardar_producto"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_boton"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etStockProducto" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

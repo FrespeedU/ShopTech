@@ -2,84 +2,114 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo_oscuro"
-    android:padding="24dp">
+    android:padding="@dimen/padding_estandar"
+    tools:context=".PagoActivity">
 
     <TextView
-        android:id="@+id/tvTituloCheckout"
+        android:id="@+id/tvTituloPago"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Checkout"
+        android:layout_marginTop="32dp"
+        android:text="Pasarela de Pagos"
         android:textColor="@color/neon_azul"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_titulo"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvDireccionTitulo"
+        android:id="@+id/tvMontoPagar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Dirección de entrega:"
-        android:textColor="@color/texto_secundario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloCheckout" />
-
-    <ImageView
-        android:id="@+id/ivMapaFalso"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/gris_paneles"
-        android:src="@android:drawable/ic_dialog_map"
-        app:tint="@color/neon_verde"
-        app:layout_constraintTop_toBottomOf="@+id/tvDireccionTitulo" />
-
-    <TextView
-        android:id="@+id/tvDireccionTexto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Calle 15 #2-45, Facatativá"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/neon_verde"
+        android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivMapaFalso" />
-
-    <TextView
-        android:id="@+id/tvMetodoPago"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Método de pago:"
-        android:textColor="@color/texto_secundario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDireccionTexto" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPago"
+        tools:text="Total a pagar: $0" />
 
     <EditText
-        android:id="@+id/etMedioPago"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/etNumeroTarjeta"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/alto_input"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/neon_azul"
-        android:hint="ePayco - Tarjeta / PSE"
-        android:enabled="false"
-        android:textColor="@color/neon_amarillo"
-        app:layout_constraintTop_toBottomOf="@+id/tvMetodoPago" />
+        android:hint="Número de Tarjeta (16 dígitos)"
+        android:inputType="number"
+        android:maxLength="16"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMontoPagar" />
+
+    <LinearLayout
+        android:id="@+id/llFechas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/etNumeroTarjeta">
+
+        <EditText
+            android:id="@+id/etVencimiento"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_weight="1"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="MM/AA"
+            android:inputType="text"
+            android:maxLength="5"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etCVV"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_input"
+            android:layout_weight="1"
+            android:backgroundTint="@color/neon_azul"
+            android:hint="CVV (3 dígitos)"
+            android:inputType="numberPassword"
+            android:maxLength="3"
+            android:textColor="@color/white"
+            android:textColorHint="@color/texto_secundario" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etTitular"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/alto_input"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/neon_azul"
+        android:hint="Nombre del Titular"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/texto_secundario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llFechas" />
 
     <Button
-        android:id="@+id/btnPagarFinal"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/btnProcesarPago"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/alto_boton"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/neon_fucsia"
-        android:text="Pagar $1.562.000"
+        android:text="Pagar Ahora"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_boton"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

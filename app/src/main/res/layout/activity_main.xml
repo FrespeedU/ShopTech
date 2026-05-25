@@ -6,27 +6,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo_oscuro"
+    android:padding="@dimen/padding_estandar"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/contenedor_fragmentos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/menu_inferior"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/tvTituloCatalogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_catalogo"
+        android:textColor="@color/neon_azul"
+        android:textSize="@dimen/text_size_titulo"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/menu_inferior"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/btnSalirComprador"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/gris_paneles"
-        app:itemIconTint="@color/neon_azul"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/menu_navegacion"
+        android:text="@string/txt_salir"
+        android:textColor="@color/neon_fucsia"
+        app:strokeColor="@color/neon_fucsia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProductosComprador"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerCarrito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCatalogo"
+        tools:listitem="@layout/item_producto" />
+
+    <Button
+        android:id="@+id/btnVerCarrito"
+        android:layout_width="0dp"
+        android:layout_marginBottom="44dp"
+        android:layout_height="@dimen/alto_boton"
+        android:backgroundTint="@color/neon_verde"
+        android:text="@string/btn_ver_carrito"
+        android:textColor="@color/fondo_oscuro"
+        android:textSize="@dimen/text_size_boton"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -69,7 +69,7 @@
         android:id="@+id/btnAgregarCarrito"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="44dp"
         android:backgroundTint="@color/neon_fucsia"
         android:text="Agregar al Carrito"
         android:textColor="@color/white"
